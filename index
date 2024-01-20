@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кнопка с временем нажатия</title>
+  <style>
+    #myButton {
+      padding: 10px 20px;
+      background-color: blue; /* начальный цвет кнопки */
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<button id="myButton" onclick="changeColor()">Нажми меня</button>
+
+<script>
+  function changeColor() {
+    var button = document.getElementById("myButton");
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
+    var formattedTime = hours + ":" + minutes + ":" + seconds;
+
+    button.style.backgroundColor = "green"; // изменение цвета на зеленый
+    button.innerHTML = formattedTime; // отображение времени нажатия
+  }
+</script>
+
+</body>
+</html>
